@@ -1,2 +1,2 @@
-# fullcycle-temperature
-Temperature System by CEP
+# FullCycle temperature system
+Get temperature by CEP
