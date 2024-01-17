@@ -1,0 +1,18 @@
+version: '3.7'
+
+services:
+  temperature:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        ENV_ARG: ${ENV_ARG}
+    image: temperature
+    ports:
+      - "8080:8080"
+    container_name: temperature
+    networks:
+      - temperature-ntw
+
+networks:
+  temperature-ntw:

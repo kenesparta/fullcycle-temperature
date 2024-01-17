@@ -1,0 +1,5 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '--build-arg', 'ENV_ARG=$_ENV_ARG', '-t', 'gcr.io/${_PROJECT_ID}/temperature', '.']
+images:
+  - 'gcr.io/${_PROJECT_ID}/temperature'

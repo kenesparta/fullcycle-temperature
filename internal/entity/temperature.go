@@ -29,6 +29,10 @@ func (t *Temperature) Kelvin() float64 {
 	return t.kelvin
 }
 
+func (t *Temperature) Celsius() float64 {
+	return t.celsius
+}
+
 func (t *Temperature) convert() {
 	t.convertFahrenheit()
 	t.convertKelvin()

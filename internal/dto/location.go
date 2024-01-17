@@ -15,4 +15,6 @@ type LocationOut struct {
 	Gia         string `json:"gia"`
 	Ddd         string `json:"ddd"`
 	Siafi       string `json:"siafi"`
+
+	Erro bool `json:"erro"`
 }
