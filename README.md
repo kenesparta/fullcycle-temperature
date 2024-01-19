@@ -37,8 +37,8 @@ Get temperature by CEP
     }
     ```
 - You can run the api integration test by running one of these commands:
-  - Local: ```API_URL=http://127.0.0.1:8080 go test ./tests/integration```
-  - Production: ```API_URL=https://temperature-uz6otgp6yq-uc.a.run.app go test ./tests/integration```
+  - Local: ```API_URL=http://127.0.0.1:8080 go test -v ./tests/integration```
+  - Production: ```API_URL=https://temperature-uz6otgp6yq-uc.a.run.app go test -v ./tests/integration```
 - You can change the local URL, the production URL is the app that is running in the Google Cloud.
 
 # 🚀 Deploy to GCP Cloud Run
