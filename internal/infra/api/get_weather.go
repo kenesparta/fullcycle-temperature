@@ -5,7 +5,6 @@ import (
 	"crypto/tls"
 	"encoding/json"
 	"fmt"
-	"github.com/kenesparta/fullcycle-temperature/internal/dto"
 	"io"
 	"net/http"
 	"net/url"
@@ -13,6 +12,7 @@ import (
 	"time"
 
 	"github.com/kenesparta/fullcycle-temperature/config"
+	"github.com/kenesparta/fullcycle-temperature/internal/dto"
 	"github.com/kenesparta/fullcycle-temperature/internal/entity"
 )
 
@@ -36,6 +36,11 @@ func (wap *WeatherFromAPI) Get(ctx context.Context, location string) (entity.Tem
 		fmt.Printf("Error parsing URL: %s\n", urlErr)
 		return entity.Temperature{}, urlErr
 	}
+	apiKey := wap.cnf.Temperature.ApiKey
+	if apiKey == "" {
+		return entity.Temperature{}, entity.ErrEmptyAPIkey
+	}
+
 	q := u.Query()
 	q.Set("key", wap.cnf.Temperature.ApiKey)
 	q.Set("q", location)
