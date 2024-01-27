@@ -10,7 +10,7 @@ Get temperature by CEP
   {
     "temperature" : {
       "url": "https://api.weatherapi.com",
-      "api_key": "***"
+      "api_key": "your-API-key-here"
     },
     "cep": {
       "url": "https://viacep.com.br"
@@ -36,6 +36,8 @@ Get temperature by CEP
       "temp_K": 298
     }
     ```
+## Run integration test only
+
 - You can run the api integration test by running one of these commands in the project root:
   - Local:
     ```shell
@@ -47,7 +49,20 @@ Get temperature by CEP
     ```
 - You can change the local URL, the production URL is the app that is running in the Google Cloud.
 
+## Run all the tests
+
+- If you need to **run all the tests** you should execute in the project root:
+  - Local:
+    ```shell
+      API_URL=http://localhost:8080 go test -v ./...
+    ```
+  - Production:
+    ```shell
+      API_URL=https://temperature-uz6otgp6yq-uc.a.run.app go test -v ./...
+    ```
+
 # 🚀 Deploy to GCP Cloud Run
+
 - Set these variables on your favourite shell:
   - `ENV_PROJECT_ID`: This is the projectID that you are using, for example in my case is: `generic-316622`
   - `ENV_ARG`: this is the environment variable, you can use either `prod` or `dev`.
